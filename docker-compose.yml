@@ -1,0 +1,23 @@
+version: '3'
+services:
+  
+  node-service:
+    build:
+      context: .
+      dockerfile: Node/Dockerfile
+    ports:
+      - "3000:3000"
+    
+    # Uncomment the below if R Docker Image issue is resolved
+    
+    # depends_on:
+    #   - r-service
+
+  # r-service:
+  #   build: 
+  #     context: .
+  #     dockerfile: R/Dockerfile
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - ./data/Goolam:/data/Goolam
